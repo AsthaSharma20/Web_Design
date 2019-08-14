@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
+body
+{
+	background-color:white;
+	font-family: "Times New Roman", Times, serif;
+	text-align:center;
+}
+.header
+{
+	display: block;
+  	margin-left: auto;
+ 	margin-right: auto;
+ 	width: 20%;
+	padding:10px;
+}
+.bar {
+  	overflow: hidden;
+  	background-color: #333;
+}
+
+.bar a {
+ 	 float: left;
+ 	 color: #f2f2f2;
+ 	 text-align: center;
+  	padding: 14px 120px;
+  	text-decoration: none;
+  	font-size: 20px;
+}
+
+.bar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.column{
+	float:left;
+	padding:10px;
+	
+
+}
+.column.middle{
+	
+	width: 50%;
+
+}
+
+.column.side{
+	
+	width: 25%;
+}
+
+
+.row:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+div.gallery {
+  margin: 30px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 185px;
+
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+.footer {
+   position: bottom;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+}
+.bar1 {
+  	overflow: hidden;
+  	background-color: #333;
+width:100%;
+	
+}
+
+.bar1 a {
+ 	 float: left;
+ 	 color: #f2f2f2;
+ 	 text-align: center;
+  	padding: 14px 220px;
+  	text-decoration: none;
+  	font-size: 20px;
+}
+
+.bar1 a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.bar1 a.active {
+  background-color: #008B8B;
+  color: white;
+}
+
+	
