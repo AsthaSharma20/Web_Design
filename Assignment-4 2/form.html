@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Feedback</title>
+	<style>
+		label {
+			float: left;
+			width: 150px;
+		}
+		#container {
+			width: 700px;
+			margin: auto;
+			background-color: beige;
+		}
+		main {
+			padding: 50px;
+		}
+		input:invalid {
+			background-color: red !important;
+		}
+		input:valid {
+			border: 2px solid black;
+		}
+	</style>
+	<script>
+	function displayOutput(){
+			 
+        if(document.getElementById("miss").checked){
+            var mytitle=document.getElementById("miss").value;
+        }  
+        else if(document.getElementById("mr").checked){
+            var mytitle=document.getElementById("mr").value;
+        }  
+        else if(document.getElementById("mrs").checked) 
+			var mytitle=document.getElementById("mrs").value;
+		
+      var fname=document.getElementById("firstName").value;
+      localStorage.setItem("firstName",fname);
+
+      var lname=document.getElementById("lastName").value;
+      localStorage.setItem("lastName",lname);
+
+      var email=document.getElementById("emailId").value;
+      localStorage.setItem("emailId",email);
+
+      var phone=document.getElementById("phoneNumber").value;
+      localStorage.setItem("phoneNumber",phone);
+
+      var zip=document.getElementById("zipcode").value;
+	  localStorage.setItem("zipcode",zip);
+	  
+	  if(document.getElementById("facebook").checked){
+		  var hear=document.getElementById("facebook").value;
+		
+	  }
+	  else{
+		  hear=" ";
+	  }
+	  if(document.getElementById("google").checked){
+		  var hear1=document.getElementById("google").value;
+		
+	  }
+	  else{
+		  hear1=" ";
+	  }
+	  if(document.getElementById("yelp").checked){
+		  var hear2=document.getElementById("yelp").value;
+		 
+	  }
+	  else{
+		  hear2=" ";
+	  }
+
+	  var fhear=hear+" "+hear1+" "+hear2;
+	  localStorage.setItem("heard",fhear);
+
+	  var select=document.getElementById("sel").value;
+     
+	if(document.getElementById("chk1").checked){
+		var select1=document.getElementById("chk1").value;
+		var select2=document.getElementById("t1").value;
+ 
+	  }
+	  else{
+		  var select1=" ";
+		  var select2=" ";
+	  }
+	 
+	  if(document.getElementById("chk2").checked){
+		var select1=document.getElementById("chk2").value;
+		var select2=document.getElementById("t2").value;
+ 
+	  }
+	  else{
+		  var select1=" ";
+		  var select2=" ";
+	  }
+	  var fselect=select+" "+select1+" "+select2;
+	  localStorage.setItem("selected",fselect);
+	var comment=document.getElementById("comments").value;
+      localStorage.setItem("comments",comment);
+
+      document.write("<h1>Response: </h1><table><th>Title </th><th>First Name </th><th>Last Name </th><<th>Email Id</th><th>Phone Number</th><th>Zip code</th><th>How did you hear?</th><th>Comments</th><th>Laptop</th></tr><tr><td>"+mytitle+"</td><td>"+fname+"</td>"+"<td>"+lname+"</td><td>"+email+"</td><td>"+phone+"</td><td>"+zip+"</td><td>"+fhear+"</td><td>"+comment+"</td><td>"+fselect+"</td></tr></table>");
+
+
+		}
+		</script>
+</head>
+<body>
+	<div id="container">
+		<main>
+			<h2>Feeback</h2>
+			<h3>Love something? Hate something? Let us know!</h3>
+			Note : Fields marked with an asterisk(*) are mandatory
+			<br><br>
+			<form name="myform" id="myForm" >
+				<label>Title*:</label>
+				<input type="radio" name="title" id="miss" value="miss" required="required" />Miss
+				<input type="radio" name="title" id="mr" value="mr" required="required" />Mr.
+				<input type="radio" name="title" id="mrs" value="mrs" required="required" />Mrs.
+				<br><br>
+				<label for="firstName">First Name*:</label>
+				<input type="text" name="firstName" id="firstName" placeholder="First Name" required/>
+				<br><br>
+				<label for="lastName">Last Name*:</label>
+				<input type="text" name="lastName" id="lastName" placeholder="Last Name" required/>
+				<br><br>
+				<label for="emailId">Email Id*:</label>
+				<input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" required
+					pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="incorrect email format"/>
+				<br><br>
+				<label for="phoneNumber">Phone Number*:</label>
+				<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" required
+					pattern="[0-9]{10}" />
+				<br><br>
+				<label for="zipcode">ZipCode*:</label>
+				<input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" required pattern="[0-9]{5}" />
+				<br><br>
+				<label for="zipcode">How did you hear*:</label>
+				<input id="facebook" type='checkbox' name="source" value="facebook" required/> Facebook
+				<input id="google" type='checkbox' name="source" value="google" required/> Google
+				<input id="yelp" type='checkbox' name="source" value="yelp" required/> Yelp
+				<br><br>
+				<label for="comments">Comments*:</label>
+				<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25" required></textarea>
+				<br><br>
+				<div>
+					Laptop:
+					<select id="sel" onchange="updateCheckBox(this)" required>
+						<option>-- Select --</option>
+						<option value="Del">Apple</option>
+						<option value="Asus">Toshiba</option>
+					</select>
+					<p>
+						<label for="chk1" id="l1" style="display: none">Apple </label>
+						&nbsp;&nbsp;
+						<input type="checkbox" name="offer" value="Apple" id="chk1" style="display: none"
+							onchange="displayIt(this)" />
+						</br>
+						<label for="t1" id="lt1" style="display: none">Apple tb</label>
+						<input type="text" name="tb" id="t1" style="display: none" />
+						</br>
+						<label for="chk2" id="l2" style="display: none">Toshiba</label>
+						&nbsp;&nbsp;
+						<input type="checkbox" name="offer" value="Asus" id="chk2" style="display: none"
+							onchange="displayIt(this)" />
+						</br>
+						<label for="t2" id="lt2" style="display: none">Toshiba tb </label>
+						<input type="text" name="tb" id="t2" style="display: none" />
+					</p>
+				</div>
+				<div id="div" style="margin-top:10px;display:block;color:green;">
+				</div>
+				<input type="submit" value="Submit" onclick="displayOutput()">
+				<input type="Reset" value="Reset">
+				<br><br>
+			</form>
+		</main>
+	</div>
+	
+		
+
+</body>
+
+</html>
