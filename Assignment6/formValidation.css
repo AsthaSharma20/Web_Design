@@ -1,0 +1,49 @@
+label { float: left;
+      width: 150px;}
+      #container{
+          width: 700px;
+          margin: auto;
+          background-color: lightyellow;
+      } 
+      main{
+          padding: 50px;
+      }
+
+ .error {
+       color: red;
+     margin-left: 5px;
+    }
+    #radioError, #checkBoxError {
+      display: inline;
+    }
+
+
+      .City
+      {
+        display: none;
+      }
+
+     
+
+.em{
+        color: red;
+      }
+
+      .email{
+        color: red;
+      }
+      .phone{
+        color: red;
+      }
+      .zip{
+        color: red;
+      }
+      #first{
+      	    position: relative;
+    top: 0em;
+      }
+
+        #last{
+      	    position: relative;
+    top: 0em;
+      }

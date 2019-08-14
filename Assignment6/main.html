@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Feedback</title>
+  <link rel="stylesheet" type="text/css" href="formValidation.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ </head>
+ <body>
+ <div id="container">
+   
+   <main>
+   <h2>Feeback</h2>
+   <h3>Love something? Hate something? Let us know!</h3>
+     Note : Fields marked with an asterisk(*) are mandatory
+     <br><br>
+     <form method="get" name="Form"  onsubmit="results();" action="display.html">
+      <label>Title*:</label>
+      <input type="radio" name="title" id="miss" value="miss" required="required"/>Miss
+      <input type="radio" name="title" id="mr" value="mr" required="required"/>Mr.
+      <input type="radio" name="title" id="mrs" value="mrs" required="required"/>Mrs.
+      <br><br>
+      <label for="firstName">First Name*:</label>
+      <input type="text" name="firstName" id="firstName" placeholder="First Name" onchange="firstValid()" /> 
+      <label1 id="commentFNamePrompt"></label1>
+      <br><br>
+      
+
+      <label for="lastName">Last Name*:</label>
+      <input type="text" name="lastName" id="lastName" placeholder="Last Name" onchange="lastValid()"/>
+      <label1 id="commentLNamePrompt"></label1>
+      <br><br>
+      
+
+      <label for="emailId">Email Id*:</label>
+      <input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" onchange="emailValid()">
+     <label1 id="commentEmailPrompt"></label1>
+      <br><br>
+      
+
+      <label for="phoneNumber">Phone Number*:</label>
+      <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" onchange="phoneValid()" />
+      <label1 id="commentPhonePrompt"></label1>
+      <br><br>
+      
+            <label for="zipcode">ZipCode*:</label>
+      <input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" onchange="zipValid()" />
+      <label1 id="commentZipPrompt"></label1>
+      <br><br>
+             
+            <label for="zipcode">How did you hear:</label>
+      <input type='checkbox' name="source" value="facebook" /> Facebook
+            <input type='checkbox' name="source" value="google" /> Google
+            <input type='checkbox' name="source" value="yelp" /> Yelp 
+      <br><br> 
+
+             <label>Brand:</label>
+     
+
+        <select name="Laptop" id="Country" placeholder="Select Laptop" size="1" onchange="cnt(this)">
+       <!-- <option required="required">Select Country</option>-->
+        <option required="required"> </option>
+        <option required="required">HP</option>
+        <option required="required">Apple</option>
+        <option required="required">Asus</option>
+        <option required="required">Lenovo</option>
+        <option required="required">Toshiba</option>
+      </select>
+      <br><br>
+        
+          <div class="City">
+         <label>Model:</label>
+         <input type="checkbox" name="City" value="City" onchange="showHide(this.checked)" />Model 1
+         <br><br>
+     </div>
+           
+       
+            <div class="CName"> 
+         <label id ="heading" label for="textbox" style="display : none;">Model Name*:</label>
+       <input type="text" name="CName" id="hiddenField" style="display : none;" onkeyup="validTextbox()" />
+       <label1 id="commentTextPrompt"></label1>
+      <br><br>
+         </div>             
+      <label for="comments">Comments:</label>
+      <textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25" onkeyup="validComment()"></textarea>
+      <br><br>
+      <input id="submitBtn" type="submit" value="Submit" onsubmit="results();" >
+      <input type="Reset" id="resetBtn">
+      <br><br>
+     </form>
+   </main>
+ </div>
+
+ <script src= "formValidation.js"></script>
+ </body>
+</html>
